@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -33,3 +34,7 @@ Route::patch('users/{user}','UserController@update');
 Route::get('users/{user}/orders','UserController@showOrders');
 Route::patch('products/{product}/units/add','ProductController@updateUnits');
 Route::patch('orders/{order}/deliver', 'OrderController@deliverOrder');
+
+//google maps
+Route::get('google-autocomplete', [GoogleController::class, 'index']);
+
